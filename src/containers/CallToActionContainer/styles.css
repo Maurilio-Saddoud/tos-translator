@@ -1,0 +1,17 @@
+.call-to-action-container {
+    margin: 0;
+}
+
+.call-to-action-content-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* overflow: hidden; */
+}
+
+.component-spacer {
+    flex-grow:  1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
