@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 const NavButton = ({ buttonText, showIcon = true, route }) => {
   const navigate = useNavigate();
+
   return (
     <div className="nav-button-container">
       <p className="nav-button-text" onClick={() => navigate(route)}>

@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import ResultsPageContainer from "../../containers/ResultsPageContainer";
 
-const ResultsPage = () => {
+const ResultsPage = ({ contract }) => {
   return (
-    <div>ResultsPage</div>
-  )
-}
+    <div className="results-page-container">
+      <ResultsPageContainer contract={contract} />
+    </div>
+  );
+};
 
-export default ResultsPage
+export default ResultsPage;
