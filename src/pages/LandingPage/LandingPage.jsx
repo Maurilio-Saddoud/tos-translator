@@ -4,7 +4,7 @@ import "./styles.css"
 
 const LandingPage = () => {
   return (
-    <div className='landing-page-container'>
+    <div className='landing-page-container' >
         {/* <h1>TOS Translator</h1> */}
        <CallToActionContainer />
     </div>

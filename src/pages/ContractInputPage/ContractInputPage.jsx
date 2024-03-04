@@ -1,13 +1,17 @@
-import React from 'react'
-import "./styles.css"
-import ContractInputContainer from '../../containers/ContractInputContainer'
+import React from "react";
+import "./styles.css";
+import ContractInputContainer from "../../containers/ContractInputContainer";
 
-const ContractInputPage = ({setContract}) => {
+const ContractInputPage = ({ setContract, setFile, file }) => {
   return (
-    <div className='contract-input-page-container'>
-        <ContractInputContainer setContract={setContract} />
+    <div className="contract-input-page-container" >
+      <ContractInputContainer
+        file={file}
+        setFile={setFile}
+        setContract={setContract}
+      />
     </div>
-  )
-}
+  );
+};
 
-export default ContractInputPage
+export default ContractInputPage;

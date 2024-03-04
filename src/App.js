@@ -8,6 +8,7 @@ import ContractInputPage from "./pages/ContractInputPage";
 
 function App() {
   const [contract, setContract] = useState("");
+  const [file, setFile] = useState(null);
 
   return (
     <div>
@@ -19,11 +20,17 @@ function App() {
           <Route path={"/"} element={<LandingPage />} />
           <Route
             path={"/contractInput"}
-            element={<ContractInputPage setContract={setContract} />}
+            element={
+              <ContractInputPage
+                file={file}
+                setFile={setFile}
+                setContract={setContract}
+              />
+            }
           />
           <Route
             path={"/results"}
-            element={<ResultsPage contract={contract} />}
+            element={<ResultsPage file={file} contract={contract} />}
           />
         </Routes>
       </Router>

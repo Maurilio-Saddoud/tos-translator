@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./styles.css";
 import { Grid } from "@mui/material";
 import TitleComponent from "../../components/TitleComponent";
@@ -7,8 +7,7 @@ import { useNavigate } from "react-router-dom";
 import SelectFileButtonComponent from "../../components/SelectFileButtonComponent";
 import FileTagComponent from "../../components/FileTagComponent";
 
-const ContractInputContainer = ({ setContract }) => {
-  const [file, setFile] = useState(null);
+const ContractInputContainer = ({ setContract, setFile, file }) => {
   const [inputKey, setInputKey] = useState(Date.now());
   const textareaRef = useRef(null);
   const navigate = useNavigate();
@@ -27,11 +26,15 @@ const ContractInputContainer = ({ setContract }) => {
 
   const handleSubmit = () => {
     const contractText = textareaRef.current.value;
-    if (contractText) {
+    if (contractText || file) {
       setContract(contractText);
       navigate("/results");
     }
   };
+
+  useEffect(() => {
+    handleRemoveFile();
+  }, [])
 
   return (
     <div className="contract-input-container">

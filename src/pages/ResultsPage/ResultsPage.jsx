@@ -1,10 +1,10 @@
 import React from "react";
 import ResultsPageContainer from "../../containers/ResultsPageContainer";
 
-const ResultsPage = ({ contract }) => {
+const ResultsPage = ({ contract, file }) => {
   return (
     <div className="results-page-container">
-      <ResultsPageContainer contract={contract} />
+      <ResultsPageContainer file={file} contract={contract} />
     </div>
   );
 };

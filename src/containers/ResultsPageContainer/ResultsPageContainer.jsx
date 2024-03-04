@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import config from "../../config";
 import { useNavigate } from "react-router-dom";
 import { CircularProgress, Grid } from "@mui/material";
 import { motion } from "framer-motion";
@@ -8,20 +7,43 @@ import TitleComponent from "../../components/TitleComponent";
 import NavButton from "../../components/NavButton";
 import "./styles.css";
 
-const ResultsPageContainer = ({ contract }) => {
+const ResultsPageContainer = ({ contract, file }) => {
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(false);
   const [response, setResponse] = useState("");
   const navigate = useNavigate();
 
   const submitContract = async () => {
-    const response = await axios.post(
-      config.SERVER_URL + "api/openai/readContract",
-      {
-        content: contract,
+    let response = "";
+    if (file) {
+      const formData = new FormData();
+      formData.append("pdf", file);
+      try {
+        response = await axios.post(
+          process.env.REACT_APP_SERVER_URL + "api/openai/convertPdf",
+          formData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        );
+        setResponse(response.data); // Assuming the server responds with the text
+      } catch (error) {
+        console.error("Error uploading file:", error);
+        setError(true);
       }
-    );
+    } else {
+      response = await axios.post(
+        process.env.REACT_APP_SERVER_URL + "api/openai/readContract",
+        {
+          content: contract,
+        }
+      );
+    }
+
     let responseObj = extractAndParseJSON(
-      response.data.choices[0].message.content
+      response?.data?.choices[0]?.message?.content
     );
     setResponse(responseObj);
     setIsLoading(false);
@@ -62,7 +84,7 @@ const ResultsPageContainer = ({ contract }) => {
   };
 
   useEffect(() => {
-    if (!contract) {
+    if (!contract && !file) {
       navigate("/contractInput");
       return;
     }
@@ -79,6 +101,11 @@ const ResultsPageContainer = ({ contract }) => {
             <div className="result-container">
               {isLoading ? (
                 <CircularProgress sx={{ color: "#B49700" }} />
+              ) : error ? (
+                <p style={{ textAlign: "center", fontSize: "20px" }}>
+                  Error processing your PDF. <br />
+                  Too much styling for my poor PDF parser :(
+                </p>
               ) : (
                 <motion.div
                   variants={containerVariants}
