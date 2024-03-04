@@ -1,0 +1,20 @@
+.nav-button-container {
+    /* height: 100%; */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-button-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Monomaniac One', sans-serif;
+    font-size: 35px;
+    margin: 20px 0 20px 0;
+}
+
+.nav-button-text:hover {
+    cursor: pointer;
+}

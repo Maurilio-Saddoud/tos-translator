@@ -1,0 +1,22 @@
+.opening-hook-container {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  position: relative;
+  /* margin-top: 20px; */
+}
+
+.opening-hook-text {
+  font-family: "Monomaniac One", sans-serif;
+  color: #b49700;
+  font-size: 35px;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.terms-img {
+  position: relative;
+  width: 250px;
+  top: 60px;
+  right: 100px;
+}

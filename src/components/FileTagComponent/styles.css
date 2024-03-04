@@ -1,0 +1,18 @@
+.file-tag-container {
+    display: flex;
+    align-items: center;
+    background-color: #fff5d0;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.file-name {
+    margin: 0px;
+    font-family: "Monomaniac One", sans-serif;
+    margin-right: 10px;
+}
+
+.close-icon {
+    margin: 2px 0 0 0;
+    cursor: pointer;
+}
