@@ -1,0 +1,23 @@
+.select-file-button-container {
+  background-color: #f5c721;
+  width: fit-content;
+  border-radius: 13px;
+  padding: 5px 30px 10px 30px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.button-text {
+  font-family: "Monomaniac One", sans-serif;
+  color: #796500;
+  font-size: 30px;
+  margin: 0px;
+  text-align: center;
+  flex-shrink: 0;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.select-file-button-container:hover {
+    background-color: #daad09;
+}
