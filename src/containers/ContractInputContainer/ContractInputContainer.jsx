@@ -34,6 +34,7 @@ const ContractInputContainer = ({ setContract, setFile, file }) => {
 
   useEffect(() => {
     handleRemoveFile();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

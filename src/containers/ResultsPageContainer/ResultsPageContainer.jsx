@@ -89,6 +89,7 @@ const ResultsPageContainer = ({ contract, file }) => {
       return;
     }
     submitContract();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
