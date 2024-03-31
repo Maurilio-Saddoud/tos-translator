@@ -5,7 +5,7 @@ const OpeningHook = () => {
   return (
     <div className="opening-hook-container">
       <p className="opening-hook-text">
-        Stop signing shit you <br /> didn't read
+        Stop signing sh!t you <br /> didn't read
       </p>
       <img
         className="terms-img"
