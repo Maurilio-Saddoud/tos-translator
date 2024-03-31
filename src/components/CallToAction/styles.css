@@ -32,3 +32,14 @@
     left: 110px;
   }
 }
+
+@media (max-width: 400px) {
+  .call-to-action-text {
+    font-size: 28px;
+  }
+  .certification-img {
+    width: 200px;
+    left: 80px;
+    top: 30px;
+  }
+}
