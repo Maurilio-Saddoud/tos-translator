@@ -60,3 +60,9 @@ textarea::-webkit-scrollbar-thumb {
     justify-content: space-between;
     align-items: center;
 }
+
+@media (max-width: 400px) {
+  .contract-input-content-container {
+    height: 85vh;
+  }
+}

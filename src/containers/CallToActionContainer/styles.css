@@ -21,3 +21,8 @@
     justify-content: space-evenly;
   }
 }
+@media (max-width: 400px) {
+  .call-to-action-content-container {
+    height: 85vh;
+  }
+}
