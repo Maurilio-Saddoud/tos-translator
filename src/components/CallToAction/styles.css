@@ -22,3 +22,13 @@
   width: 350px;
   left: 140px;
 }
+
+@media (max-width: 600px) {
+  .call-to-action-text {
+    font-size: 30px;
+  }
+  .certification-img {
+    width: 250px;
+    left: 110px;
+  }
+}

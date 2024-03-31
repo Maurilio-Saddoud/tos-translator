@@ -3,7 +3,6 @@
   display: flex;
   justify-content: left;
   position: relative;
-  /* margin-top: 20px; */
 }
 
 .opening-hook-text {
@@ -19,4 +18,15 @@
   width: 250px;
   top: 60px;
   right: 100px;
+}
+
+@media (max-width: 600px) {
+  .opening-hook-text {
+    font-size: 30px;
+  }
+  .terms-img {
+    top: 45px;
+    width: 200px;
+    right: 90px;
+  }
 }
